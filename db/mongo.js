@@ -3,19 +3,18 @@ const bcrypt = require("bcrypt");
 // var ObjectId = require('mongodb').ObjectId
 
 const dbName = "horariosCoordi";
-const collName1 = "maestros";
-const collName2 = "alumnos";
-const collName3 = "materias";
-const collName4 = "horarioMaestro";
-const collName5 = "horarioAlumno";
-const collName6 = "info";
+const collName1 = "cuentas";
+const collName2 = "materias";
+const collName3 = "horarioMaestro";
+const collName4 = "horarioAlumno";
+const collName5 = "info";
 
 const url = process.env.MONGODB_URL || "mongodb://localhost:27017";
 
 const client = new MongoClient(url);
 
-// CONEXIÓN A DB MAESTROS
-const connectToMaestros = async () => {
+// CONEXIÓN A DB CUENTAS
+const connectToAcc = async () => {
   await client.connect();
   const db = client.db(dbName);
   const collection = db.collection(collName1);
@@ -28,25 +27,11 @@ const connectToMaestros = async () => {
   };
 };
 
-// CONEXIÓN A DB ALUMNOS
-const connectToAlumnos = async () => {
-  await client.connect();
-  const db = client.db(dbName);
-  const collection = db.collection(collName2);
-
-  console.log("Connected To Alumnos");
-
-  return {
-    collection,
-    db
-  };
-};
-
 // CONEXIÓN A DB MATERIAS
 const connectToMaterias = async () => {
   await client.connect();
   const db = client.db(dbName);
-  const collection = db.collection(collName3);
+  const collection = db.collection(collName2);
 
   console.log("Connected To Materias");
 
@@ -60,7 +45,7 @@ const connectToMaterias = async () => {
 const connectToHorarioMaestros = async () => {
   await client.connect();
   const db = client.db(dbName);
-  const collection = db.collection(collName4);
+  const collection = db.collection(collName3);
 
   console.log("Connected To Horario Maestros");
 
@@ -74,7 +59,7 @@ const connectToHorarioMaestros = async () => {
 const connectToHorarioAlumno = async () => {
   await client.connect();
   const db = client.db(dbName);
-  const collection = db.collection(collName5);
+  const collection = db.collection(collName4);
 
   console.log("Connected To Horario Alumnos");
 
@@ -88,7 +73,7 @@ const connectToHorarioAlumno = async () => {
 const connectToInfo = async () => {
   await client.connect();
   const db = client.db(dbName);
-  const collection = db.collection(collName6);
+  const collection = db.collection(collName5);
 
   console.log("Connected To Info");
 
@@ -97,6 +82,21 @@ const connectToInfo = async () => {
     db
   };
 };
+
+// // BUSCAR USUARIOS
+const checaUsuario = async (matricula) => {
+  let { collection } = await connectToAcc()
+
+  let response = await collection.findOne({ matricula: matricula })
+
+  console.log(response)
+  console.log(matricula)
+
+  if (!response) {
+    throw false
+  }
+  return response
+}
 
 // // CREAR NUEVO USUARIO
 // const insertUser = async (user) => {
@@ -264,13 +264,12 @@ module.exports = {
   collName3,
   collName4,
   collName5,
-  collName6,
-  connectToMaestros,
-  connectToAlumnos,
+  connectToAcc,
   connectToMaterias,
   connectToHorarioMaestros,
   connectToHorarioAlumno,
   connectToInfo,
+  checaUsuario,
   // insertUser,
   // insertPayment,
   // updateUserState,

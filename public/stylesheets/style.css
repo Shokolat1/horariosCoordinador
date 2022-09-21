@@ -56,6 +56,10 @@
 	padding: 0.85rem 1rem;
 }
 
+.card{
+	background-color: white;
+}
+
 /** 1. Font Color White CSS **/
 :root{
 	--default-bg: #edf2f7;
@@ -1471,7 +1475,7 @@ ul.timeline > li:before {
 	line-height:2.1rem;
 }
 #auth #auth-right .auth-logo{
-	margin-bottom:7rem;
+	margin-bottom:2rem;
 }
 #auth #auth-right .auth-logo img{
 	height:6rem;font-size: 14px;

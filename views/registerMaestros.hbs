@@ -1,0 +1,58 @@
+{{>sidebar}}
+
+<div class="content-start transition">
+    <div class="container-fluid dashboard">
+        <div class="content-header">
+            <h4>¡Hola, Coordinador!</h4>
+            <p>Crea un Perfil de Maestro</p>
+        </div>
+
+        <div class="row">
+            <div class="card">
+
+                <div class="card-body">
+                    <form method="post" action="/coordi/nuevoMto">
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label for="firstName" class="form-label">Nombre</label>
+                                <input class="form-control" type="text" id="firstName" placeholder="Nombre(s)"
+                                    name="firstName" autofocus />
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="lastName" class="form-label">Apellido</label>
+                                <input class="form-control" type="text" placeholder="Apellidos" name="lastName"
+                                    id="lastName" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="email" class="form-label">Matricula</label>
+                                <input class="form-control" type="number" id="matricula" name="matricula"
+                                    placeholder="Matricula" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="organization" class="form-label">Especialidad</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected disabled value="">Seleccione una carrera</option>
+                                    <option value="1">Humanidades</option>
+                                    <option value="2">Redes</option>
+                                    <option value="3">Administrativo</option>
+                                    <option value="4">Programación</option>
+                                    <option value="5">Frontend</option>
+                                </select>
+
+                            </div>
+
+                            <div class="mt-2">
+                                <button type="submit" class="btn btn-primary me-2">Registrar</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div> <!-- End Container -->
+</div><!-- End Content -->
