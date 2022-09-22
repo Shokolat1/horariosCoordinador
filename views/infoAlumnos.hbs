@@ -1,0 +1,93 @@
+<!--Topbar -->
+<div class="topbar transition">
+    <div class="bars">
+        <button type="button" class="btn transition" id="sidebar-toggle">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</div>
+
+{{>sidebar}}
+
+<div class="sidebar-overlay"></div>
+
+<!--Content Start-->
+<div class="content-start transition">
+
+    <div class="content-header">
+        <h1> Alumno</h1>
+        <p>Busca y Editalo</p>
+    </div>
+
+    <form>
+        <div class="input-group mb-3">
+            <input class="form-control" type="number" id="matricula" name="matricula" placeholder="Matricula"
+                autocomplete="off" />
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary me-2">Buscar</button>
+            </div>
+        </div>
+    </form>
+    <div class="card">
+        <div class="card-body">
+            <form method="post" action="/coordi/nuevoAl">
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label for="firstName" class="form-label">Nombre</label>
+                        <input class="form-control" type="text" id="firstName" placeholder="Nombre(s)" name="firstName"
+                            autofocus autocomplete="off" />
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input class="form-control" type="text" placeholder="Apellidos" name="lastName" id="lastName"
+                            autocomplete="off" />
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="mat" class="form-label">Matricula</label>
+                        <input class="form-control" type="number" id="matricula" name="matricula"
+                            placeholder="Matricula" autocomplete="off" />
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input class="form-control" type="text" id="password" name="password" placeholder="Contraseña"
+                            autocomplete="off" />
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="organization" class="form-label">Ingeniería</label>
+                        <select class="form-select" aria-label="Default select example" name="ing">
+                            <option selected disabled value="">Seleccione una Ingeniería</option>
+                            <option value="ISC">ISC</option>
+                            <option value="ISA">ISA</option>
+                            <option value="IME">IME</option>
+                            <option value="IIS">IIS</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="organization" class="form-label">Semestre</label>
+                        <select class="form-select" aria-label="Default select example" name="semestre">
+                            <option selected disabled value="">Seleccione un semestre</option>
+                            <option value="1">Primero 1°</option>
+                            <option value="2">Segundo 2°</option>
+                            <option value="3">Tercero 3°</option>
+                            <option value="4">Cuarto 4°</option>
+                            <option value="5">Quinto 5°</option>
+                            <option value="6">Sexto 6°</option>
+                            <option value="7">Séptimo 7°</option>
+                            <option value="8">Octavo 8°</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-2">
+                        <button class="btn btn-primary me-2" id="passGen" type="button">Generar
+                            Contraseña</button>
+                        <button type="submit" class="btn btn-primary me-2">Actualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>

@@ -11,17 +11,17 @@
             <div class="card">
 
                 <div class="card-body">
-                    <form method="post" action="/coordi/materias">
+                    <form method="post" action="/coordi/nuevasMaterias">
                         <div class="row">
                             <div class="mb-3 col-md-6">
-                                <label for="firstName" class="form-label">Materia</label>
+                                <label for="materia" class="form-label">Materia</label>
                                 <input class="form-control" type="text" id="materia" placeholder="Nombre de la Materia"
                                     name="materia" autofocus />
                             </div>
 
                             <div class="mb-3 col-md-6">
                                 <label for="organization" class="form-label">Duración</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" name="horas">
                                     <option selected disabled value="">Seleccione la cantidad de horas</option>
                                     <option value="40">40</option>
                                     <option value="50">50</option>
@@ -31,18 +31,18 @@
 
                             <div class="mb-3 col-md-6">
                                 <label for="organization" class="form-label">Ingeniería</label>
-                                <select class="form-select" aria-label="Default select example">
+                                 <select class="form-select" aria-label="Default select example" name="ing">
                                     <option selected disabled value="">Seleccione una Ingeniería</option>
-                                    <option value="1">ISC</option>
-                                    <option value="2">Industrial</option>
-                                    <option value="3">Mecatronica</option>
-                                    <option value="4">Automotriz</option>
+                                    <option value="ISC">ISC</option>
+                                    <option value="ISA">ISA</option>
+                                    <option value="IME">IME</option>
+                                    <option value="IIS">IIS</option>
                                 </select>
                             </div>
 
                             <div class="mb-3 col-md-6">
                                 <label for="organization" class="form-label">Semestre</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" name="semestre">
                                     <option selected disabled value="">Seleccione un semestre</option>
                                     <option value="1">Primero 1°</option>
                                     <option value="2">Segundo 2°</option>
@@ -50,7 +50,7 @@
                                     <option value="4">Cuarto 4°</option>
                                     <option value="5">Quinto 5°</option>
                                     <option value="6">Sexto 6°</option>
-                                    <option value="7">Septimo 7°</option>
+                                    <option value="7">Séptimo 7°</option>
                                     <option value="8">Octavo 8°</option>
                                 </select>
                             </div>

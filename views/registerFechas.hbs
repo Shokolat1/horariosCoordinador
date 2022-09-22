@@ -1,0 +1,72 @@
+{{>sidebar}}
+
+<div class="content-start transition">
+    <div class="container-fluid dashboard">
+        <div class="content-header">
+            <h4>¡Hola Coordinador!</h4>
+            <p>Menciona el Inicio y Termino del Semestre</p>
+        </div>
+
+        <div class="row">
+            <div class="card">
+
+                <div class="card-body">
+                    <form method="post" action="/coordi/fechas">
+                        <div class="row">
+
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="form-label mt-4">Fecha de Inicio</label>
+                                <input type="number" min="1" max="31" class="form-control" id="diaI"
+                                    aria-describedby="emailHelp" placeholder="Día" name="diaI">
+                                <br>    
+                                <select class="form-select" id="mesI" name="mesI">
+                                    <option selected disabled value="">Seleccione el mes</option>
+                                    <option value="Jan">Enero</option>
+                                    <option value="Feb">Febrero</option>
+                                    <option value="Mar">Marzo</option>
+                                    <option value="Apr">Abril</option>
+                                    <option value="May">Mayo</option>
+                                    <option value="Jun">Junio</option>
+                                    <option value="Jul">Julio</option>
+                                    <option value="Aug">Agosto</option>
+                                    <option value="Sep">Septiembre</option>
+                                    <option value="Oct">Octubre</option>
+                                    <option value="Nov">Noviembre</option>
+                                    <option value="Dec">Diciembre</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="form-label mt-4">Fecha de Término</label>
+                                <input type="number" min="1" max="31" class="form-control" id="diaT"
+                                    aria-describedby="emailHelp" placeholder="Día" name="diaT">
+                                <br>    
+                                <select class="form-select" id="mesT" name="mesT">
+                                    <option selected disabled value="">Seleccione el mes</option>
+                                    <option value="Jan">Enero</option>
+                                    <option value="Feb">Febrero</option>
+                                    <option value="Mar">Marzo</option>
+                                    <option value="Apr">Abril</option>
+                                    <option value="May">Mayo</option>
+                                    <option value="Jun">Junio</option>
+                                    <option value="Jul">Julio</option>
+                                    <option value="Aug">Agosto</option>
+                                    <option value="Sep">Septiembre</option>
+                                    <option value="Oct">Octubre</option>
+                                    <option value="Nov">Noviembre</option>
+                                    <option value="Dec">Diciembre</option>
+                                </select>
+                            </div>
+
+                            <br><br>
+                            <div class="mt-2">
+                                <button type="submit" class="btn btn-primary" id="btnTable">Establecer Fechas</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

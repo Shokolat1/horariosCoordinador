@@ -1,0 +1,83 @@
+<!--Topbar -->
+<div class="topbar transition">
+    <div class="bars">
+        <button type="button" class="btn transition" id="sidebar-toggle">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</div>
+
+{{>sidebar}}
+
+<div class="sidebar-overlay"></div>
+
+<!--Content Start-->
+<div class="content-start transition">
+
+    <div class="content-header">
+        <h1> Materias</h1>
+        <p>Consulta las materias</p>
+    </div>
+
+    <form>
+        <div class="input-group mb-3">
+            <label for="organization" class="form-label"></label>
+            <select class="form-select" aria-label="Default select example" name="ing">
+                <option selected disabled value=""> Ingeniería</option>
+                <option value="ISC">ISC</option>
+                <option value="ISA">ISA</option>
+                <option value="IME">IME</option>
+                <option value="IIS">IIS</option>
+            </select>
+            <label for="organization" class="form-label"></label>
+            <select class="form-select" aria-label="Default select example" name="semestre">
+                <option selected disabled value="">Semestre</option>
+                <option value="1">Primero 1°</option>
+                <option value="2">Segundo 2°</option>
+                <option value="3">Tercero 3°</option>
+                <option value="4">Cuarto 4°</option>
+                <option value="5">Quinto 5°</option>
+                <option value="6">Sexto 6°</option>
+                <option value="7">Séptimo 7°</option>
+                <option value="8">Octavo 8°</option>
+            </select>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary me-2">Consultar</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="card">
+        <div class="card-body">
+            <form method="post" action="/coordi/nuevoAl">
+
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre de la Materia</th>
+                            <th scope="col">Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Mark</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>

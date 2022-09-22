@@ -1,0 +1,56 @@
+<!--Topbar -->
+<div class="topbar transition">
+    <div class="bars">
+        <button type="button" class="btn transition" id="sidebar-toggle">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</div>
+
+{{>sidebar}}
+<div class="content-start transition">
+    <div class="container-fluid dashboard">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Para que grupo quieres crear el horario?</h4>
+                </div>
+
+                <div class="row">
+
+                    <form action="/coordi/getHrAl" method="post">
+                        <div class="mb-3 col-md-6">
+                            <label for="organization" class="form-label">Carrera</label>
+                            <select class="form-select" aria-label="Default select example" name="carrera">
+                                <option selected disabled value="">Selecciona una carrera</option>
+                                <option value="ISC">ISC</option>
+                                <option value="ISA">ISA</option>
+                                <option value="IME">IME</option>
+                                <option value="IIS">IIS</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-md-6">
+                            <label for="organization" class="form-label">Semestre</label>
+                            <select class="form-select" aria-label="Default select example" name="semestre">
+                                <option selected disabled value="">Seleccione un semestre</option>
+                                <option value="1">Primero 1°</option>
+                                <option value="2">Segundo 2°</option>
+                                <option value="3">Tercero 3°</option>
+                                <option value="4">Cuarto 4°</option>
+                                <option value="5">Quinto 5°</option>
+                                <option value="6">Sexto 6°</option>
+                                <option value="7">Séptimo 7°</option>
+                                <option value="8">Octavo 8°</option>
+                            </select>
+                        </div>
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-primary me-2">Ir</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

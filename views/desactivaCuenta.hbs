@@ -1,0 +1,55 @@
+{{>sidebar}}
+
+<div class="content-start transition">
+    <div class="container-fluid dashboard">
+        <div class="content-header">
+            <h4>Desactivar Cuenta</h4>
+            <p>Ingresa los siguientes datos</p>
+        </div>
+
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" action="/coordi/desactivarCuenta">
+                        <div class="row">
+                            <div class="mb-2 col-md-4">
+                                 <label for="organization" class="form-label">Tipo de Cuenta </label>
+                                    <select class="form-select" aria-label="Default select example" name="type">
+                                        <option selected disabled value="">Seleccione el tipo de cuenta</option>
+                                        <option value="1">Maestro</option>
+                                        <option value="2">Alumno</option>
+					                </select> 
+                            </div>
+
+                            <div class="mb-2 col-md-4">
+                                <label for="mat" class="form-label">Matricula</label>
+                                    <input class="form-control" type="number" id="matricula" name="matricula" placeholder="Matricula">
+                            </div>
+ 
+                            <div class="mb-2 col-md-4">
+                                <label for="organization" class="form-label">Motivo</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected disabled value="">Motivo de desactivación de la cuenta</option>
+                                        <option value="1">Pagos Pendientes</option>
+                                        <option value="2">Calificaciones</option>
+                                        <option value="3">Expulsión</option>
+                                        <option value="4">Renuncia</option>
+                                        <option value="5">Despido</option>
+                                    </select>
+                            </div>
+
+                            <div class="mt-2">
+                                <button type="submit" class="btn btn-primary me-2">Desactivar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div> <!-- End Container -->
+</div><!-- End Content -->

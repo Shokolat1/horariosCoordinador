@@ -1,0 +1,138 @@
+{{>sidebar2}}
+
+<!--Content Start-->
+<div class="content-start transition">
+	<div class="container">
+		<div class="content-header">
+			<h1>Horarios</h1>
+			<p></p>
+		</div>
+
+		<div class="col-md-12" id="CajaAula">
+			<div class="card">
+				<div class="card-header">
+					<h4>Información General</h4>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive" style="text-align: center;">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th scope="col">Aula</th>
+									<th scope="col">Carrera</th>
+									<th scope="col">Semestre</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="text-dark">{{alldatos.aula}}</td>
+									<td class="text-dark">{{alldatos.carrera}}</td>
+									<td class="text-dark">{{alldatos.semestre}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>Fechas</h4>
+						<div style="display: none;">
+							<input type="text" value="{{fechas.fecIni}}" id="fecIni">
+							<input type="text" value="{{fechas.fecTer}}" id="fecTer">
+							{{#each clases}}
+							<input type="text" value="{{this.materia}},{{this.horas}}" id="arrClases">
+							<input type="text" value="{{this.materia}}" id="cls">
+							{{/each}}
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive" style="text-align: center;">
+							<table class="table table-bordered">
+								<thead>
+									<tr id="tablaMeses"></tr>
+									<tr id="tablaDias"></tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>Horario de Clases</h4>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive" style="text-align: center;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th scope="col">Nombre de Materia</th>
+										<th scope="col">Horas de Duración</th>
+										<th scope="col">Fecha de Inicio</th>
+										<th scope="col">Maestro</th>
+										<th scope="col">Horario</th>
+									</tr>
+								</thead>
+								<tbody class="x" id="oTable">
+									<tr>
+										{{#each datos1}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos2}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos3}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos4}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos5}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos6}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos7}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos8}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+									<tr>
+										{{#each datos9}}
+										<td class="text-dark">{{this}}</td>
+										{{/each}}
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/javascripts/dragAndDrop.js"></script>
+<script src="/javascripts/days.js"></script>

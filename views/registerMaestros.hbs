@@ -3,7 +3,7 @@
 <div class="content-start transition">
     <div class="container-fluid dashboard">
         <div class="content-header">
-            <h4>¡Hola, Coordinador!</h4>
+            <h4>¡Hola Coordinador!</h4>
             <p>Crea un Perfil de Maestro</p>
         </div>
 
@@ -16,33 +16,40 @@
                             <div class="mb-3 col-md-6">
                                 <label for="firstName" class="form-label">Nombre</label>
                                 <input class="form-control" type="text" id="firstName" placeholder="Nombre(s)"
-                                    name="firstName" autofocus />
+                                    name="firstName" autofocus autocomplete="off" />
                             </div>
 
                             <div class="mb-3 col-md-6">
                                 <label for="lastName" class="form-label">Apellido</label>
                                 <input class="form-control" type="text" placeholder="Apellidos" name="lastName"
-                                    id="lastName" />
+                                    id="lastName" autocomplete="off" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="email" class="form-label">Matricula</label>
                                 <input class="form-control" type="number" id="matricula" name="matricula"
-                                    placeholder="Matricula" />
+                                    placeholder="Matricula" autocomplete="off" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input class="form-control" type="text" id="password" name="password"
+                                    placeholder="Contraseña" autocomplete="off" autocomplete="off" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="organization" class="form-label">Especialidad</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected disabled value="">Seleccione una carrera</option>
-                                    <option value="1">Humanidades</option>
-                                    <option value="2">Redes</option>
-                                    <option value="3">Administrativo</option>
-                                    <option value="4">Programación</option>
-                                    <option value="5">Frontend</option>
+                                <select class="form-select" aria-label="Default select example" name="especialidad">
+                                    <option selected disabled value="">Seleccione una Especialidad</option>
+                                    <option value="Humanidades">Humanidades</option>
+                                    <option value="Humanidades">Ciencias</option>
+                                    <option value="Redes">Redes</option>
+                                    <option value="Administrativo">Administrativo</option>
+                                    <option value="Backend">Backend</option>
+                                    <option value="Frontend">Frontend</option>
                                 </select>
-
                             </div>
 
                             <div class="mt-2">
+                                <button class="btn btn-primary me-2" id="passGen" type="button">Generar
+                                    Contraseña</button>
                                 <button type="submit" class="btn btn-primary me-2">Registrar</button>
                             </div>
                     </form>

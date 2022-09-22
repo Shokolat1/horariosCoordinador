@@ -1,5 +1,5 @@
 <!--Sidebar-->
-<div class="sidebar transition overlay-scrollbars animate__animated  animate__slideInLeft">
+<div class="sidebar transition overlay-scrollbars animate__animated animate__slideInLeft">
 	<div class="sidebar-content">
 		<div id="sidebar">
 
@@ -9,74 +9,101 @@
 			</div>
 
 			<ul class="side-menu">
+				<!-- Divider-->
+				<li class="divider" data-text="STARTER">Creación o Adición</li>
+				<!-- Divider-->
+
 				<li>
-					<a href="/" class="active">
-						<i class='bx bxs-dashboard icon'></i> Página Principal
+					<a href="/coordi/nuevoAl">
+						<i class='bx bxs-user-account icon'></i>
+						Cuentas de Estudiantes
+						<i class='bx bx-chevron-right icon-right'></i>
 					</a>
 				</li>
 
-				<!-- Divider-->
-				<li class="divider" data-text="STARTER">Creación o Adición</li>
-
-				<!-- Divider-->
+				<li>
+					<a href="/coordi/nuevoMto">
+						<i class='bx bxs-user-account icon'></i>
+						Cuentas de Maestros
+						<i class='bx bx-chevron-right icon-right'></i>
+					</a>
+				</li>
 
 				<li>
-					<a href="/coordi/horarioAl">
-						<i class='bx bxs-bar-chart-alt-2 icon'></i>
+					<a href="/coordi/nuevasMaterias">
+						<i class='bx bx-briefcase-alt-2 icon'></i>
+						Materias
+						<i class='bx bx-chevron-right icon-right'></i>
+					</a>
+				</li>
+
+				<li>
+					<a href="/coordi/fechas">
+						<i class='bx bx-calendar-check icon'></i>
+						Fechas de Inicio y Término
+						<i class='bx bx-chevron-right icon-right'></i>
+					</a>
+				</li>
+
+				<li>
+					<a href="/coordi/InterAlumn">
+						<i class='bx bx-time-five icon'></i>
 						Horarios de Estudiantes
 						<i class='bx bx-chevron-right icon-right'></i>
 					</a>
 				</li>
 
 				<li>
-					<a href="/coordi/horarioMto">
-						<i class='bx bxs-bar-chart-alt-2 icon'></i>
+					<a href="/coordi/InterMto">
+						<i class='bx bx-time-five icon'></i>
 						Horarios de Maestros
 						<i class='bx bx-chevron-right icon-right'></i>
 					</a>
 				</li>
 
-				<li>
-					<a href="/coordi/materias">
-						<i class='bx bxs-bar-chart-alt-2 icon'></i>
-						Materias
-						<i class='bx bx-chevron-right icon-right'></i>
-					</a>
-				</li>
-
 				<!-- Divider-->
-				<li class="divider" data-text="Consultas">Consultas</li>
-				
+				{{!-- <li class="divider" data-text="Consultas">Consultas y Edición</li> --}}
+
 				{{!-- TODO: hrefs de Consultas --}}
-				<li>
-					<a href="#">
-						<i class='bx bxs-user icon'></i>
+				{{!-- <li>
+					<a href="/coordi/infoalumno">
+						<i class='bx bxs-user-account icon'></i>
 						Información de Usuarios
 						<i class='bx bx-chevron-right icon-right'></i>
 					</a>
 				</li>
 
 				<li>
-					<a href="#">
-						<i class='bx bxs-user icon'></i>
-						Horarios Actuales
+					<a href="/coordi/infomaterias">
+						<i class='bx bx-briefcase-alt-2 icon'></i>
+						Materias Actuales
 						<i class='bx bx-chevron-right icon-right'></i>
 					</a>
-				</li>
+				</li> --}}
 
 				<!-- Divider-->
-				<li class="divider" data-text="STARTER">Eliminación o Desactivación</li>
-
+				{{!-- <li class="divider" data-text="STARTER">Desactivación</li> --}}
 				<!-- Divider-->
 
-				<li>
-					<a href="/coordi/desactivar">
-						<i class='bx bxs-bar-chart-alt-2 icon'></i>
+				{{!-- <li>
+					<a href="/coordi/desactivarCuenta">
+						<i class='bx bx-message-alt-x icon' ></i>
 						Desactivación de Cuentas
 						<i class='bx bx-chevron-right icon-right'></i>
 					</a>
-				</li>
+				</li> --}}
 
+				<!-- Divider-->
+				<li class="divider" data-text="STARTER">Cerrar Sesión</li>
+				<!-- Divider-->
+
+				<li>
+					<a href="/logout">
+						<i class='bx bx-log-out icon'></i>
+						¡Hasta Luego!
+						<i class='bx bx-chevron-right icon-right'></i>
+					</a>
+				</li>
 			</ul>
 
 		</div>

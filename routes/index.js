@@ -1,6 +1,7 @@
 var express = require('express');
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+const bcrypt = require('bcrypt')
 const { checaUsuario } = require("../db/mongo");
 var router = express.Router();
 
@@ -16,7 +17,7 @@ passport.use(new LocalStrategy({
       client.close()
       return done(null, false);
     } else {
-      const match = await bcrypt.compare(password, obj.pass);
+      const match = await bcrypt.compare(password, obj.password);
 
       // CHECAR SI LA CONTRASEÑA EN EL FORMULARIO Y LA DB SON LAS MISMAS,
       // Y SI EL USUARIO ESTÁ ACTIVO
@@ -40,18 +41,21 @@ router.get('/', function (req, res, next) {
   res.render('login', { title: 'Inicio de Sesión' });
 });
 
+router.get('/logout', async function (req, res, next) {
+  req.logout(function (err) {
+    if (err) { return next(err); }
+    res.redirect("/");
+  });
+})
+
 // INICIAR SESIÓN
 router.post("/",
-  passport.authenticate("local", { failureRedirect: "/?errLI=1" }),
+  passport.authenticate("local", { failureRedirect: "/" }),
   function (req, res) {
-    if (req.user.type === "coordi") {
-      res.redirect("/coordi?hello=1");
-    } else if (req.user.type === "maestro") {
-      // FIXME:
-      res.redirect(`/users/maestro?user=${req.user.type}&hello=2`);
+    if (req.user.tipo === "coordi") {
+      res.redirect("/coordi/nuevoAl");
     } else {
-      // FIXME:
-      res.redirect(`/users/alumno?user=${req.user.type}&hello=2`);
+      res.redirect(`/users/?tipo=${req.user.tipo}&matricula=${req.user.matricula}`);
     }
   }
 )

@@ -46,10 +46,11 @@
  * 6. Utilities
  */
 
-/** 0. Import Font & animation  **/
-@import 'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap';
-@import '../modules/animate/animate.min.css';
+/** 0. Im./animate.min.css@import 'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap';
+/* @import '../modules/animate/animate.min.css'; */
 
+
+@import 'https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap';
 .form-select{
 	background-color: #e8f0fe;
 	border: 1px solid #ced4da;
@@ -57,7 +58,9 @@
 }
 
 .card{
-	background-color: white;
+	background-color: #e8f0fe;
+	display: block;
+	border: none;
 }
 
 /** 1. Font Color White CSS **/
@@ -73,7 +76,7 @@ body {
   font-weight: 400;
   font-family: Nunito;
   background-color: #C0E6BA;
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-#ebfff0 100%;
   line-height: 1.5;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
   overflow-x: hidden;
@@ -4417,7 +4420,22 @@ footer .author-footer{
 		-webkit-transform: scale(.9);
 		transform: scale(.9);
 		opacity: 0
-	}
+
+
+.draggable {
+	cursor: move;
+	padding: 10px;
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+  }
+  
+  .draggable.over {
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+	border: 3px dotted rgb(255, 255, 255);
+  }	}
 
 	100% {
 		-webkit-transform: scale(1);
@@ -4426,3 +4444,17 @@ footer .author-footer{
 	}
 }
 
+.draggable {
+	cursor: move;
+	padding: 10px;
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+  }
+  
+  .draggable.over {
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+	border: 3px dotted rgb(255, 255, 255);
+  }

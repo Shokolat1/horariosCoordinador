@@ -1,203 +1,299 @@
- <!--Topbar -->
-  <div class="topbar transition">
+<!--Topbar -->
+<div class="topbar transition">
 	<div class="bars">
 		<button type="button" class="btn transition" id="sidebar-toggle">
 			<i class="fa fa-bars"></i>
 		</button>
 	</div>
-	</div>
+</div>
 
 {{>sidebar}}
 
 <div class="sidebar-overlay"></div>
 
 
-	<!--Content Start-->
-	<div class="content-start transition">
-		<div class="container-fluid dashboard">
-			<div class="content-header">
-				<h1>Horarios</h1>
-				<p></p>
+<!--Content Start-->
+<div class="content-start transition">
+	<div class="container-fluid dashboard">
+		<div class="content-header">
+			<h1>Horarios</h1>
+			<p></p>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-6 col-lg-3">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4 d-flex align-items-center">
+								<i class="fas fa-inbox icon-home bg-primary text-light"></i>
+							</div>
+							<div class="col-8">
+								<p>Seleccione la</p>
+								<h5>Materia</h5>
+							</div>
+						</div>
+						<td><button class="btn btn-primary" value="Show Div"
+								onclick="showDivMaterias()">Detalles</button></td>
+					</div>
+				</div>
 			</div>
-			
-			<div class="row">
 
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-inbox icon-home bg-primary text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Seleccione la</p>
-									<h5>Materia</h5>
-								</div>
+			<div class="col-md-6 col-lg-3">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4 d-flex align-items-center">
+								<i class="fas fa-clipboard-list icon-home bg-success text-light"></i>
+							</div>
+							<div class="col-8">
+								<p>Seleccione el</p>
+								<h5>Maestro</h5>
 							</div>
 						</div>
+						<td><button class="btn btn-primary" value="Show Div"
+								onclick="showDivMaestros()">Detalles</button></td>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-lg-3">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4 d-flex align-items-center">
+								<i class="fas fa-chart-bar  icon-home bg-info text-light"></i>
+							</div>
+							<div class="col-8">
+								<p>Seleccione el</p>
+								<h5>Horario</h5>
+							</div>
+						</div>
+						<td><button class="btn btn-primary" value="Show Div" onclick="showDivHoras()">Detalles</button>
+						</td>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-lg-3">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-4 d-flex align-items-center">
+								<i class="fas fa-id-card  icon-home bg-warning text-light"></i>
+							</div>
+							<div class="col-8">
+								<p>Seleccione el</p>
+								<h5>Aula</h5>
+							</div>
+						</div>
+						<select class="form-select" aria-label="Default select example" name="type" id="escogeAula">
+							<option selected disabled value="">Seleccione el aula</option>
+							<option value="ASD 4">ASD 4</option>
+							<option value="ASD 5">ASD 5</option>
+							<option value="ASD 6">ASD 6</option>
+							<option value="ASD 7">ASD 7</option>
+							<option value="CIP 1">CIP 1</option>
+							<option value="CIP 2">CIP 2</option>
+							<option value="CIP 3">CIP 3</option>
+							<option value="CIP 4">CIP 4</option>
+							<option value="CIP 5">CIP 5</option>
+						</select>
 					</div>
 				</div>
 
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-clipboard-list icon-home bg-success text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Seleccione el</p>
-									<h5>Maestro</h5>
-								</div>
-							</div>
+			</div>
+
+
+			<div class="col-md-12" id="CajaMaestros" style="display: none;">
+				<div class="card">
+					<div class="card-header">
+						<h4>Maestros</h4>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive" style="text-align: center;">
+							<table class="table table-bordered">
+								<tbody class="x">
+									{{#each profes}}
+									<tr>
+										<td class="text-dark draggable" draggable="true">{{this}}</td>
+									</tr>
+									{{/each}}
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-chart-bar  icon-home bg-info text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Cuantas</p>
-									<h5>Horas</h5>
-								</div>
-							</div>
-						</div>
+			<div class="col-md-12" id="CajaMaterias" style="display: none;">
+				<div class="card">
+					<div class="card-header">
+						<h4>Materias</h4>
 					</div>
 				</div>
-
-				<div class="col-md-6 col-lg-3">
-					<div class="card">
-						<div class="card-body">
-							<div class="row">
-								<div class="col-4 d-flex align-items-center">
-									<i class="fas fa-id-card  icon-home bg-warning text-light"></i>
-								</div>
-								<div class="col-8">
-									<p>Seleccione el</p>
-									<h5>Aula</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-		
-				
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-header">
-							<h4>Horario</h4>
-						</div>
-						<div class="card-body pb-4">
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="/images/message/4.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">Nassim</h5>
-									<h6 class="text-muted mb-0">4 Semestre</h6>
-								</div>
-							</div>
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="/images/message/5.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">Miriam</h5>
-									<h6 class="text-muted mb-0">2 Semestre</h6>
-								</div>
-							</div>
-							<div class="recent-message d-flex px-4 py-3">
-								<div class="avatar avatar-lg">
-									<img src="/images/message/1.jpg">
-								</div>
-								<div class="name ms-4">
-									<h5 class="mb-1">Manuel</h5>
-									<h6 class="text-muted mb-0">8 Semestre</h6>
-								</div>
-							</div>
-							<div class="px-4">
-								<button class='btn btn-block btn-xl btn-primary font-bold mt-3'>Start
-									Conversation</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-header">
-							<h4>Pagos</h4>
-						</div>
-						<div class="card-body"> 
-						<div class="table-responsive"> 
-						<table class="table table-striped">
-							<thead>
-							  <tr>
-								<th scope="col">ID</th>
-								<th scope="col">Nombre</th>
-								<th scope="col">Fecha</th>
-								<th scope="col">Total</th>
-								<th scope="col">Status</th>
-								<th scope="col">Metodo de Pago</th>
-								<th scope="col">Detalles</th>
-							  </tr>
-							</thead>
-							<tbody>
-							  <tr>
-								<th scope="row">#24138	</th>
-								<td>Nassim</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-success">Pagado</span></td>
-								<td>Mastercard</td>
-								<td><button class="btn btn-primary">Detalles</button></td>
-							  </tr>
-
-							  <tr>
-								<th scope="row">#24138</th>
-								<td>Nassim</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-success">Pagado</span></td>
-								<td>Visa</td>
-								<td><button class="btn btn-primary">Detalles</button></td>
-							  </tr>
-
-							  <tr>
-								<th scope="row">#24138	</th>
-								<td>Messi</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-success">Pagado</span></td>
-								<td>Paypal</td>
-								<td><button class="btn btn-primary">Detalles</button></td>
-							  </tr>
-
-							  <tr>
-								<th scope="row">#24138	</th>
-								<td>Nassim</td>
-								<td>07 Oct, 2022</td>
-								<td>$400</td>
-								<td><span class="text-warning">Pendiente</span></td>
-								<td>Visa</td>
-								<td><button class="btn btn-primary">Detalles</button></td>
-							  </tr>
+				<div class="card-body">
+					<div class="table-responsive" style="text-align: center;">
+						<table class="table table-bordered">
+							<tbody id="matCls" class="x">
 							</tbody>
-						  </table>
-						  </div>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12" id="CajaHoras" style="display: none;">
+				<div class="card">
+					<div class="card-header">
+						<h4>Horas</h4>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive" style="text-align: center;">
+							<table class="table table-bordered">
+								<tbody class="x">
+									{{#if xSem}}
+									<tr>
+										<td class="text-dark draggable" draggable="true">7:45 - 8:45</td>
+										<td class="text-dark draggable" draggable="true">7:45 - 8:45</td>
+										<td class="text-dark draggable" draggable="true">7:45 - 8:45</td>
+										<td class="text-dark draggable" draggable="true">7:45 - 8:45</td>
+									</tr>
+
+									<tr>
+										<td class="text-dark draggable" draggable="true">9:00 - 11:00</td>
+										<td class="text-dark draggable" draggable="true">9:00 - 11:00</td>
+										<td class="text-dark draggable" draggable="true">9:00 - 11:00</td>
+										<td class="text-dark draggable" draggable="true">9:00 - 11:00</td>
+									</tr>
+
+									<tr>
+										<td class="text-dark draggable" draggable="true">11:30 - 13:30</td>
+										<td class="text-dark draggable" draggable="true">11:30 - 13:30</td>
+										<td class="text-dark draggable" draggable="true">11:30 - 13:30</td>
+										<td class="text-dark draggable" draggable="true">11:30 - 13:30</td>
+									</tr>
+									{{else}}
+									<tr>
+										<td class="text-dark draggable" draggable="true">14:00 - 15:00</td>
+										<td class="text-dark draggable" draggable="true">14:00 - 15:00</td>
+										<td class="text-dark draggable" draggable="true">14:00 - 15:00</td>
+										<td class="text-dark draggable" draggable="true">14:00 - 15:00</td>
+									</tr>
+
+									<tr>
+										<td class="text-dark draggable" draggable="true">15:00 - 17:00</td>
+										<td class="text-dark draggable" draggable="true">15:00 - 17:00</td>
+										<td class="text-dark draggable" draggable="true">15:00 - 17:00</td>
+										<td class="text-dark draggable" draggable="true">15:00 - 17:00</td>
+									</tr>
+
+									<tr>
+										<td class="text-dark draggable" draggable="true">17:00 - 19:00</td>
+										<td class="text-dark draggable" draggable="true">17:00 - 19:00</td>
+										<td class="text-dark draggable" draggable="true">17:00 - 19:00</td>
+										<td class="text-dark draggable" draggable="true">17:00 - 19:00</td>
+									</tr>
+									{{/if}}
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
+			</div>
 
-		   </div>
+			<div class="col-md-12" id="CajaAula" style="display: none;">
+				<div class="card">
+					<div class="card-header">
+						<h4>Aulas</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>Fechas</h4>
+						<div style="display: none;">
+							<input type="text" value="{{fechas.fecIni}}" id="fecIni">
+							<input type="text" value="{{fechas.fecTer}}" id="fecTer">
+							{{#each clases}}
+							<input type="text" value="{{this.materia}},{{this.horas}}" id="arrClases">
+							<input type="text" value="{{this.materia}}" id="cls">
+							{{/each}}
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive" style="text-align: center;">
+							<table class="table table-bordered">
+								<thead>
+									<tr id="tablaMeses"></tr>
+									<tr id="tablaDias"></tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4>Horario de Clases</h4>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive" style="text-align: center;">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th scope="col">Nombre de Materia</th>
+										<th scope="col">Horas de Duración</th>
+										<th scope="col">Fecha de Inicio</th>
+										<th scope="col">Maestro</th>
+										<th scope="col">Horario</th>
+									</tr>
+								</thead>
+								<tbody class="x" id="oTable">
+									{{#each clases}}
+									<tr>
+										<td class="text-dark draggable" draggable="true"></td>
+										<td class="text-dark"></td>
+										<td class="text-dark"><input type="text"></td>
+										<td class="text-dark draggable" draggable="true"></td>
+										<td class="text-dark draggable" draggable="true"></td>
+									</tr>
+									{{/each}}
+								</tbody>
+							</table>
+							<button id="btnReg" type="button" class="btn btn-primary">¿Crear?</button>
+							<form action="/coordi/creaHorarios" method="post">
+								<div style="display: none;">
+									<input type="text" name="f1" id="f1">
+									<input type="text" name="f2" id="f2">
+									<input type="text" name="f3" id="f3">
+									<input type="text" name="f4" id="f4">
+									<input type="text" name="f5" id="f5">
+									<input type="text" name="f6" id="f6">
+									<input type="text" name="f7" id="f7">
+									<input type="text" name="f8" id="f8">
+									<input type="text" name="f9" id="f9">
+									<input type="text" name="aula" id="aula">
+									<input type="text" name="carrera" id="carrera" value="{{carrera}}">
+									<input type="text" name="semestre" id="semestre" value="{{semestre}}">
+								</div>
+								<center>
+									<button id="btnReg2" type="submit" class="btn btn-primary"
+										style="display: none;">¡Adelante!</button>
+								</center>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 	</div>
+</div>
 
-
-
+<script src="/javascripts/dragAndDrop.js"></script>
+<script src="/javascripts/days.js"></script>
