@@ -1,4 +1,4 @@
-// FIXME: ADAPTAR A PROYECTO
+
 
 let fecIni = document.getElementById('fecIni')
 let fecTer = document.getElementById('fecTer')

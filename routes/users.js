@@ -26,7 +26,7 @@ router.get('/', isAuth, async function (req, res, next) {
       res.redirect(`/users/muestraHr?tipo=${resp.tipo}&sem=${resp.semestre}&carr=${resp.carrera}&estado=${resp.estado}`)
     })
     .catch(() => {
-      console.log('Kgaste')
+      console.log('x')
     })
     .finally(() => {
       client.close()
